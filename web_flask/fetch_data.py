@@ -16,10 +16,8 @@ def retrive(project_id):
         if task['checker_available'] is True:
             id_task = task['id']
             t = requests.post("https://intranet.hbtn.io/tasks/{}/start_correction.json".format(id_task), params=params)
-            print(t.json())
             id_correction = t.json()['id']
             c = requests.get("https://intranet.hbtn.io/correction_requests/{}.json".format(id_correction), params=params)
-            print(c.json())
             checks = c.json()['result_display']['checks']
             flag_check = 0
             for check in checks:
