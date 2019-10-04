@@ -6,7 +6,7 @@ if [ ! -f auth_data.json ]
 then
     echo "{\"api_key\": \"YOUR_API_KEY\", \"email\": \"YOUR_EMAIL\", \"password\": \"YOUR_PASS\", \"scope\": \"checker\"}" > auth_data.json
 else
-    echo "  -> auth_data.json exists, proceeding..."
+    echo "JSON Exists: Proceding..."
 fi
 
 echo -n "  -> Holberton Intranet API Key: "
@@ -33,6 +33,8 @@ if grep -q YOUR_PASS auth_data.json
 then
     sed -i "s/YOUR_PASS/$password/g" auth_data.json
 fi
+
+curl -XPOST https://intranet.hbtn.io/users/auth_token.json -H "Content-Type: application/json" -d @auth_data.json >> auth_token.json
 
 
 echo "All set!"
