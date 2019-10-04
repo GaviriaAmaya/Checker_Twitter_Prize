@@ -35,12 +35,12 @@ else
     echo "JSON Exists: Proceding..."
 fi
 
-if [ -f auth_token.json ]
+if [ -f info.json ]
 then
-    rm auth_token.json
+    rm info.json
 fi
 
 # Generate auth.token
-curl -XPOST https://intranet.hbtn.io/users/auth_token.json -H "Content-Type: application/json" -d @auth_data.json >> auth_token.json
+curl -XPOST https://intranet.hbtn.io/users/auth_token.json -H "Content-Type: application/json" -d @auth_data.json >> info.json
 
 echo "All set!"
