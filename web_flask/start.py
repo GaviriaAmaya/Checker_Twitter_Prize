@@ -2,7 +2,7 @@
 """starts a Flask web application """
 from flask import Flask
 from flask import render_template
-import fetch
+import fetch_data
 
 app = Flask(__name__)
 
