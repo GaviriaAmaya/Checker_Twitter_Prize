@@ -40,6 +40,7 @@ then
     rm auth_token.json
 fi
 
+# Generate auth.token
 curl -XPOST https://intranet.hbtn.io/users/auth_token.json -H "Content-Type: application/json" -d @auth_data.json >> auth_token.json
 
 echo "All set!"
