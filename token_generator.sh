@@ -4,7 +4,7 @@
 if [ ! -f auth_data.json ]
 
 then
-    echo "{\"api_key\": \"YOUR_API_KEY\", \"email\": \"YOUR_EMAIL\", \"password\": \"YOUR_PASS\", \"scope\": \"checker\"}" > auth_data.json
+    echo "{\"api_key\": \"YOUR_API_KEY\", \"email\": \"YOUR_EMAIL\", \"password\": \"YOUR_PASS\", \"scope\": \"checker\",\"project_id\": \"PROJECT_ID\" }" > auth_data.json
 
     echo -n "  -> Holberton Intranet API Key: "
     read -r api_key
@@ -12,6 +12,8 @@ then
     read -r email
     echo -n "  -> Holberton Intranet password: "
     read -r password
+    echo -n "  -> Holberton project id: "
+    read -r project_id
 
     # & escaper
     password=$(sed 's/[\*\.&]/\\&/g' <<<"$password")
@@ -29,6 +31,11 @@ then
     if grep -q YOUR_PASS auth_data.json
     then
 	sed -i "s/YOUR_PASS/$password/g" auth_data.json
+    fi
+
+    if grep -q PROJECT_ID auth_data.json
+    then
+	sed -i "s/PROJECT_ID/$project_id/g" auth_data.json
     fi
 
 else
