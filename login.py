@@ -1,9 +1,10 @@
+#!/usr/bin/python3
+
 import mechanicalsoup
 
 if __name__ == "__main__":
 
     URL = "https://intranet.hbtn.io/auth/sign_in"
-    LOGIN = "Log in"
     PASSWORD = "Password"
     EMAIL = "Email"
 
