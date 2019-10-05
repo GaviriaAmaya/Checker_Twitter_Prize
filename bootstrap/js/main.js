@@ -60,7 +60,7 @@
 	let obj = {'username': username, 'password': pass, 'apikey': apikey, 'project': project}
 	$.ajax({ url: "http://0.0.0.0:5000/",
 		 async: false,
-		 data: JSON.stringfy(obj),
+		 data: JSON.stringify(obj),
 		 contentType: "application/json",
 		 complete: ((data2) => {
 		     console.log(data2)
