@@ -4,7 +4,7 @@ ___
 <p align="center">
   <img width="460" height="300" src="https://camo.githubusercontent.com/04a8a9a456b8ecafad2eb4f2cff6803cd0194496/687474703a2f2f7777772e686f6c626572746f6e7363686f6f6c2e636f6d2f686f6c626572746f6e2d6c6f676f2e706e67">
 </p>
-## Project description :octocat: :
+## Project description:octocat:
 The checker twitter prize evaluates the progress of the user/student in the current project and offers a reward when he has completed at least 80%, the reward uses the twitter API to show the user a suggested tweet so pressing the button on the screen the student makes his daily tweet. 
 
 ## How it works:question:
