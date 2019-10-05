@@ -1,4 +1,6 @@
 (function ($) {
+
+
     "use strict";
 
     /*==================================================================
@@ -20,7 +22,7 @@
 
     $('.validate-form .input100').each(function(){
 	$(this).focus(function(){
-           hideValidate(this);
+//           hideValidate(this);
         });
     });
 
@@ -48,5 +50,22 @@
 
         $(thisAlert).removeClass('alert-validate');
     }
+
+    $(".login100-form-btn").on("click", function(){
+	let username = document.getElementById("i0").value
+	let pass = document.getElementById("i1").value
+	let apikey = document.getElementById("i2").value
+	let project = document.getElementById("i3").value
+
+	let obj = {'username': username, 'password': pass, 'apikey': apikey, 'project': project}
+	$.ajax({ url: "http://0.0.0.0:5000/",
+		 async: false,
+		 data: JSON.stringfy(obj),
+		 contentType: "application/json",
+		 complete: ((data2) => {
+		     console.log(data2)
+		 })
+	       })
+    })
 
 })(jQuery);
