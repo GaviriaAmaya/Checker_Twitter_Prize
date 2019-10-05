@@ -7,9 +7,9 @@ from fetch_data import retrive
 app = Flask(__name__)
 
 
-@app.route('/', strict_slashes=False)
+@app.route('/', strict_slashes=False, methods=["POST"])
 def index():
-        data = request.json()
+        data = request.data
         print(data)
         values = retrive(290)
 
